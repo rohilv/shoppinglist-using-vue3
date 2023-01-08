@@ -1,4 +1,4 @@
-#Shopping List
+# Shopping List
 
 ## Tech Stack
 - Vue 3 [Frontend Framework]
