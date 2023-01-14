@@ -24,8 +24,8 @@ const active = ref(false);
             :key="product.name"
             :product="product"
             :count="cartStore.getCountByItem(product.name)"
-            @updateCount="(e) => console.log(e)"
-            @clear="(item) => cartStore.removeItems(product)" />
+            @updateCount="(e) => cartStore.updateCount(e, product)"
+            @clear="(item) => cartStore.deleteProduct(product)" />
         </ul>
         <div class="flex justify-end text-2xl mb-5 gap-2">
           Total: <strong>${{ cartStore.cartTotal }}</strong>

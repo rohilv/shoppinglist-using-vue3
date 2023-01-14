@@ -19,7 +19,7 @@ defineEmits(["close"]);
 
 <style lang="pcss" scoped>
 .close{
-  @apply absolute top-2 right-2;
+  @apply absolute top-2 right-4;
 }
 .modal-overlay-bg{
   @apply fixed top-0 left-0 right-0 bottom-0 bg-gray-900 opacity-80;

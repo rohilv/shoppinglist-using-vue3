@@ -14,7 +14,7 @@ const updateValue = (value) => emit("update:modelValue", value);
     >
       -
     </button>
-    <input :value="modelValue" type="number" min="0" @input="updateValue" />
+    <input :value="modelValue" type="number" min="0" disabled @input="updateValue"/>
     <button
       class="bg-gray-200 px-2 rounded-r cursor-pointer"
       @click="updateValue(modelValue + 1)"
