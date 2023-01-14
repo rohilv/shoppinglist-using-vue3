@@ -4,8 +4,8 @@ import { ref } from "vue";
 import AppCountInput from "./AppCountInput.vue";
 
 // props
-const props = defineProps({
-  product: Object,
+defineProps({
+  product: {type: Object, required: true}
 });
 
 // emits
@@ -23,7 +23,7 @@ const count = ref(0);
         <AppCountInput v-model="count" />
       </div>
       <AppButton
-        class="primary" @click="$emit('addToCart', count), (count = 0)">Add to Cart</AppButton>
+        class="primary" @click="$emit('addToCart', count, product), (count = 0)">Add to Cart</AppButton>
     </div>
   </li>
 </template>
