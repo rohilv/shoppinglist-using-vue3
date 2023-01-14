@@ -25,13 +25,13 @@ const active = ref(false);
             :product="product"
             :count="cartStore.getCountByItem(product.name)"
             @updateCount="(e) => console.log(e)"
-            @clear="(item) => cartStore.removeItems(item)" />
+            @clear="(item) => cartStore.removeItems(product)" />
         </ul>
-        <div class="flex justify-end text-2xl mb-5">
-          Total: <strong>$40</strong>
+        <div class="flex justify-end text-2xl mb-5 gap-2">
+          Total: <strong>${{ cartStore.cartTotal }}</strong>
         </div>
-        <div class="flex justify-end">
-          <AppButton class="secondary mr-2">Clear Cart</AppButton>
+        <div class="flex justify-end gap-3">
+          <AppButton class="secondary" @click="cartStore.emptyCart()">Clear Cart</AppButton>
           <AppButton class="primary">Checkout</AppButton>
         </div>
       </div>

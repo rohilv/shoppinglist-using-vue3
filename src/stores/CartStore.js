@@ -13,7 +13,8 @@ export const useCartStore = defineStore("CartStore", {
         getUniqueItems: (state) => state.items.filter((e, i) => state.items.findIndex(a => a['name'] === e['name']) === i),
         getCountByItem: (state) => {
             return (itemName) => (state.items.filter((item) => item.name === itemName)).length;
-        }
+        },
+        cartTotal: (state) => state.items.reduce((acc, item) => acc + item.price, 0),
     },
     actions: {
         addItems(count, item) {
@@ -23,8 +24,11 @@ export const useCartStore = defineStore("CartStore", {
             }
         },
         removeItems(item) {
-            const matchedItems = this.items.filter((i) => i.name === item.name);
-            this.items = { matchedItems, ...this.items };
+            this.items = this.items.filter((i) => i.name !== item.name);;
+        },
+        emptyCart() {
+            this.items = [];
         }
+
     }
 });
