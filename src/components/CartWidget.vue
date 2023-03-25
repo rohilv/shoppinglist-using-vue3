@@ -1,4 +1,4 @@
-<script setup>
+<script lang="ts" setup>
 // imports
 import { ref } from "vue";
 import CartItem from "./CartItem.vue";
@@ -6,12 +6,12 @@ import { useCartStore } from "../stores/CartStore";
 const cartStore = useCartStore();
 
 // data
-const active = ref(false);
+let active = ref(false);
+
 </script>
 <template>
   <div class="relative">
-    <!-- Icon that always shows -->
-    <span class="cursor-pointer" @click="active = true">
+    <span class="cursor-pointer" id="cart-icon" @click="active = true">
       <fa icon="shopping-cart" size="lg" class="text-gray-700" />
       <div class="cart-count absolute">{{ cartStore.count }}</div>
     </span>
@@ -21,7 +21,7 @@ const active = ref(false);
         <ul class="items-in-cart">
           <CartItem
             v-for="product in cartStore.getUniqueItems"
-            :key="product.name"
+            :key="product.id"
             :product="product"
             :count="cartStore.getCountByItem(product.name)"
             @updateCount="(e) => cartStore.updateCount(e, product)"

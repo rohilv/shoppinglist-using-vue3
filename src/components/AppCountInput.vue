@@ -1,9 +1,10 @@
-<script setup>
+<script lang="ts" setup>
 defineProps({
-  modelValue: { type: [Number, String], default: 0 },
+  modelValue: { type: [Number], default: 0 }
 });
 
 const emit = defineEmits(["update:modelValue", "input"]);
+
 const updateValue = (value) => emit("update:modelValue", value);
 </script>
 <template>
@@ -24,7 +25,7 @@ const updateValue = (value) => emit("update:modelValue", value);
   </span>
 </template>
 
-<style scoped>
+<style scoped lang="pcss">
 input[type="number"] {
   appearance: none;
   -moz-appearance: textfield;

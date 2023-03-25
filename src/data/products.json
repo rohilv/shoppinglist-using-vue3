@@ -1,20 +1,24 @@
 [
   {
+    "id": 1,
     "name": "Plain Ol' Pineapple",
     "image": "pineapple-original.jpg",
     "price": 4
   },
   {
+    "id": 2,
     "name": "Dried Pineapple",
     "image": "pineapple-dried.jpg",
     "price": 5
   },
   {
+    "id": 3,
     "name": "Pineapple Gum",
     "image": "pineapple-gum.jpg",
     "price": 3
   },
   {
+    "id": 4,
     "name": "Pineapple T-Shirt",
     "image": "pineapple-tshirt.jpg",
     "price": 12

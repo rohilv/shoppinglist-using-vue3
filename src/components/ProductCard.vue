@@ -5,7 +5,7 @@ import AppCountInput from "./AppCountInput.vue";
 
 // props
 defineProps({
-  product: {type: Object, required: true}
+  "product": {type: Object, required: true}
 });
 
 // emits

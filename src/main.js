@@ -3,7 +3,7 @@ import App from "./App.vue";
 
 // Icons and Styles
 import FontAwesomePlugin from "./plugins/FontAwesome";
-import "./assets/main.pcss";
+import "@/assets/main.pcss";
 
 // App Wide Components
 import { createPinia } from "pinia";
@@ -21,3 +21,4 @@ createApp(App)
   .component("AppModalOverlay", AppModalOverlay)
   .mount("#app");
 
+window.pinia = pinia;
