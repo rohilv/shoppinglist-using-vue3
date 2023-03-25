@@ -1,9 +1,10 @@
-<script setup>
+<script lang="ts" setup>
 defineProps({
   active: { type: Boolean, default: false },
 });
 
 defineEmits(["close"]);
+
 </script>
 <template>
   <div v-if="active" class="modal-overlay">

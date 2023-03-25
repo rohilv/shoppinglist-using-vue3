@@ -1,4 +1,4 @@
-<script setup>
+<script lang="ts" setup name="TheHeader">
 // imports
 import CartWidget from './CartWidget.vue';
 </script>
